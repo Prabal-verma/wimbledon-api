@@ -1,0 +1,90 @@
+{
+    "info": {
+      "_postman_id": "d7c6505a-456b-4b34-8f85-b1a4184deaa7",
+      "name": "Wimbledon Finals API",
+      "description": "Test Wimbledon API with year query, rate limits, validation and 404s.",
+      "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+      {
+        "name": "✅ Valid Request - 2021",
+        "request": {
+          "method": "GET",
+          "header": [],
+          "url": {
+            "raw": "http://localhost:3000/wimbledon?year=2021",
+            "protocol": "http",
+            "host": ["localhost"],
+            "port": "3000",
+            "path": ["wimbledon"],
+            "query": [{ "key": "year", "value": "2021" }]
+          }
+        },
+        "response": []
+      },
+      {
+        "name": "❌ Missing Year (400)",
+        "request": {
+          "method": "GET",
+          "header": [],
+          "url": {
+            "raw": "http://localhost:3000/wimbledon",
+            "protocol": "http",
+            "host": ["localhost"],
+            "port": "3000",
+            "path": ["wimbledon"]
+          }
+        },
+        "response": []
+      },
+      {
+        "name": "❌ Invalid Year Type (400)",
+        "request": {
+          "method": "GET",
+          "header": [],
+          "url": {
+            "raw": "http://localhost:3000/wimbledon?year=abcd",
+            "protocol": "http",
+            "host": ["localhost"],
+            "port": "3000",
+            "path": ["wimbledon"],
+            "query": [{ "key": "year", "value": "abcd" }]
+          }
+        },
+        "response": []
+      },
+      {
+        "name": "❌ Unknown Year (404)",
+        "request": {
+          "method": "GET",
+          "header": [],
+          "url": {
+            "raw": "http://localhost:3000/wimbledon?year=2015",
+            "protocol": "http",
+            "host": ["localhost"],
+            "port": "3000",
+            "path": ["wimbledon"],
+            "query": [{ "key": "year", "value": "2015" }]
+          }
+        },
+        "response": []
+      },
+      {
+        "name": "🚀 Rate Limit Test (Run this 101 times)",
+        "request": {
+          "method": "GET",
+          "header": [],
+          "url": {
+            "raw": "http://localhost:3000/wimbledon?year=2022",
+            "protocol": "http",
+            "host": ["localhost"],
+            "port": "3000",
+            "path": ["wimbledon"],
+            "query": [{ "key": "year", "value": "2022" }]
+          }
+        },
+        "response": []
+      }
+    ]
+  }
+  
