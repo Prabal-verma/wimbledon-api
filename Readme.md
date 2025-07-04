@@ -138,7 +138,7 @@ wimbledon-api/
 ### 🔧 Install Dependencies
 
 ```bash
-git clone https://github.com/yourusername/wimbledon-api.git
+git clone https://github.com/Prabal-verma/wimbledon-api.git
 cd wimbledon-api
 npm install
 ```
